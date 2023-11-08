@@ -1,15 +1,10 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        hash_set={}
-        for i,j in enumerate(nums):
-            if target-j in hash_set:
-                answer=[i,hash_set[target-j]]
-                return answer
-            hash_set[j]=i
-
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hash_map={}
+        for i in range(len(nums)):
+            if target - nums[i] in hash_map:
+                return [i,hash_map[target - nums[i]]]
+            hash_map[nums[i]]=i
+        return []
                 
+        
